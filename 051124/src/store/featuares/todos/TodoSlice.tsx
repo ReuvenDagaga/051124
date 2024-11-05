@@ -27,13 +27,19 @@ const initialState: TodoState = {
 }
 
 
-export const todoSlice = createSlice({
+const todoSlice = createSlice({
     name: "todos",
     initialState,
     reducers: {
-        toggleCompletion: (state, action: PayloadAction<number>): boolean => {
+        toggleCompletion: (state, action: PayloadAction<number>) => {
             const selectedTask = state.tasks.find(task => task.id === action.payload)
+            if (selectedTask) {
+                selectedTask?.completed ? selectedTask.completed = false : selectedTask.completed = true
+            }           
         }
     }
 
 })
+
+export const { toggleCompletion } = todoSlice.actions
+export default todoSlice.reducer 
