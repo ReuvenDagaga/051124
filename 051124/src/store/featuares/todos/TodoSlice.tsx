@@ -11,17 +11,17 @@ interface TodoState {
 const initialState: TodoState = {
     tasks:[ {
         id: 0,
-        text: "",
+        text: "gbdcnbdgf",
         completed: false
     }, 
     {
         id: 1,
-        text: "",
+        text: "dfbdfbdb",
         completed: false
     },
     {
         id: 2,
-        text: "",
+        text: "dfbdbfdbd",
         completed: false,  
     } ]
 }
