@@ -11,19 +11,25 @@ export const TodoList : FC = (): JSX.Element => {
     useEffect(() => {
         
     }, [])
+
+    const hundleTuggle = (id: number) => {
+        dispatch(toggleCompletion(id))
+        setCompletedCounter(copletedCounter + 1)
+
+    }
   return (
     <div>
         <h1>Todo</h1>
         <ul>
             {todos.map(todo => 
                 <li key={todo.id}>{`${todo.text} ${todo.completed}`} 
-                <button onClick={() => hundleTuggle(todo.id)}>V
-
-                </button>
+                
+                <button onClick={() => hundleTuggle(todo.id)}>V</button>
                 </li>
                 
             )}
         </ul>
+        <p>{copletedCounter}</p>
     </div>
   )
 }
